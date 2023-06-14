@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;900&display=swap"
       rel="stylesheet"
     />
     <meta charset="UTF-8" />
@@ -19,11 +19,11 @@
   </head>
   <body>
     <div class="app">
-      <header>
+      <header id="header-desktop">
         <div>
           <img src="./assets/logo-desktop.svg" alt="Logotipo da RocketSeat" />
         </div>
-        <div class="actions">
+        <nav id="nav-desktop">
           <ul>
             <li>Home</li>
             <li>Menu</li>
@@ -31,12 +31,31 @@
             <li>Gift Cards</li>
             <li>Lojas</li>
           </ul>
-        </div>
+        </nav>
         <div>
-          <button>Pegar meu café</button>
+          <button class="take-coffee-btn">Pegar meu café</button>
         </div>
       </header>
-      <main>
+      <header id="header-mobile">
+        <img src="./assets/logo-mobile.svg" alt="" id="logo-mobile" />
+        <div id="menu-burger-mobile" onclick="openMenuMobile()"></div>
+      </header>
+      <nav id="nav-mobile">
+        <ul>
+          <li>Home</li>
+          <li>Menu</li>
+          <li>Recompensas</li>
+          <li>Gift Cards</li>
+          <li>Lojas</li>
+        </ul>
+      </nav>
+      <main id="menu">
+        <div id="title-mobile">
+          <h2>O café que fará seu código decolar para o próximo nível.</h2>
+        </div>
+        <div id="take-coffee-mobile">
+          <button class="take-coffee-btn">Pegar meu café</button>
+        </div>
         <div class="title">
           <h1>Great Coffee</h1>
           <h1 class="text-shadow">GreatCode</h1>
@@ -45,12 +64,16 @@
           <img src="./assets/rocket-coffee.png" alt="" />
         </div>
       </main>
-      <div class="blur left-bottom">
+      <div class="blur-desktop left-bottom">
         <img src="./assets/blur-1.png" alt="Efeito de blur na cor roxa" />
       </div>
-      <div class="blur right-top">
+      <div class="blur-desktop right-top">
         <img src="./assets/blur-2.png" alt="Efeito de blur na cor roxa" />
       </div>
+      <div class="blur-mobile">
+        <img src="./assets/blur-mobile.png" alt="" width="600px" />
+      </div>
     </div>
+    <script src="./main.js"></script>
   </body>
 </html>

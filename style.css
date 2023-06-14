@@ -15,6 +15,10 @@
   font-size: 62.5%;
 }
 
+html {
+  overflow: hidden;
+}
+
 .app {
   width: 100vw;
   height: 100vh;
@@ -26,18 +30,19 @@
   align-items: center;
 }
 
-header {
+#header-desktop {
   margin-top: 5rem;
   top: 0;
-  width: 100%;
-  position: fixed;
+  width: 80%;
+  position: absolute;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-header ul {
-  margin: 0 12rem 0 16rem;
+#nav-desktop ul {
+  position: static;
+  margin: 0 4rem;
   list-style: none;
   display: flex;
   align-items: center;
@@ -45,20 +50,48 @@ header ul {
   gap: 3rem;
 }
 
-header li {
+nav li {
   font-weight: 500;
   font-size: 1.4rem;
   line-height: 1.9rem;
   letter-spacing: 0.02em;
 }
 
-header button {
+#nav-desktop li {
+  transition: all 0.5s linear;
+}
+
+#nav-desktop li:hover {
+  cursor: pointer;
+  text-decoration: overline 0.1rem #ac8df5;
+  transition: all 0.5s linear;
+}
+
+.take-coffee-btn {
   border: solid 0.1rem #8257e5;
   border-radius: 0.6rem;
   padding: 1.1rem 3.8rem;
   text-transform: uppercase;
   background-color: transparent;
   color: var(--text-color);
+  transition: all 0.3s ease-in;
+}
+
+.take-coffee-btn:hover {
+  background-color: var(--button);
+  cursor: pointer;
+}
+
+#header-mobile {
+  display: none;
+  background-color: transparent;
+  width: 100%;
+  height: 4rem;
+  margin-top: 3rem;
+}
+
+#nav-mobile {
+  display: none;
 }
 
 main {
@@ -70,6 +103,19 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+#main-mobile {
+  display: none;
+  width: 40%;
+}
+
+#title-mobile h2 {
+  display: none;
+}
+
+#take-coffee-mobile {
+  display: none;
 }
 
 .title {
@@ -105,22 +151,155 @@ main h1.text-shadow::after {
   content: '/>';
 }
 
-main .main-img img {
-  position: absolute;
-  bottom: 0;
-}
-
 .left-bottom {
   width: fit-content;
   height: fit-content;
   margin-top: auto;
-  /* position: static; */
-  z-index: 0;
 }
 
 .right-top {
   width: fit-content;
   height: fit-content;
   margin-left: auto;
-  /* position: static; */
+}
+
+.blur-mobile {
+  width: fit-content;
+  height: fit-content;
+  margin: auto;
+  display: none;
+}
+
+@media screen and (min-width: 200px) and (max-width: 600px) {
+  .menu {
+    display: flex;
+  }
+
+  #header-desktop {
+    display: none;
+  }
+  #header-mobile {
+    display: flex;
+    position: fixed;
+    top: 0;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  #menu-burger-mobile {
+    background-image: url(./assets/menu-buguer-open.svg);
+    background-repeat: no-repeat;
+    width: 2.4rem;
+    height: 1.8rem;
+    transition: all 0.5s ease;
+  }
+
+  #menu-burger-mobile.active {
+    background-image: url(./assets/menu-buguer-close.svg);
+    width: 1.8rem;
+    height: 1.8rem;
+  }
+
+  #menu-burger-mobile:hover {
+    cursor: pointer;
+
+    transform: scale(1.1);
+    transition: all 0.5s ease;
+  }
+
+  #nav-mobile.active {
+    display: flex;
+    margin-top: 20rem;
+    height: 100vh;
+    width: 100%;
+    background-color: #000;
+    z-index: 1;
+    animation: fromTop 0.5s 0.2s backwards;
+  }
+
+  @keyframes fromTop {
+    from {
+      opacity: 0;
+      transform: translateY(-30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+  }
+
+  #nav-mobile.active ul {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+  }
+
+  #nav-mobile.active li {
+    border: 1px solid #29292e;
+    padding: 1.5rem;
+    width: 100%;
+    transition: all 0.3s linear;
+  }
+
+  #nav-mobile.active li:hover {
+    background-color: #866fb9;
+    transform: scale(1.01);
+    cursor: pointer;
+    transition: all 0.3s linear;
+  }
+
+  .take-coffee-btn:hover {
+    background-color: var(--button);
+    cursor: pointer;
+    transition: all 0.3s ease-in;
+  }
+
+  #title-mobile {
+    width: 60%;
+  }
+
+  #title-mobile h2 {
+    display: flex;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 3rem;
+    line-height: 4.1rem;
+    text-align: center;
+    letter-spacing: 0.02rem;
+    margin-bottom: 3rem;
+  }
+
+  #take-coffee-mobile {
+    display: flex;
+  }
+
+  .title {
+    display: flex;
+    justify-content: center;
+    position: relative;
+  }
+
+  .title h1 {
+    font-size: 5rem;
+    margin-bottom: -5rem;
+  }
+
+  main .main-image {
+    display: flex;
+    justify-content: center;
+  }
+  main .main-image img {
+    width: 80%;
+  }
+  .blur-desktop {
+    display: none;
+  }
+  .blur-mobile {
+    display: flex;
+    position: absolute;
+    width: 100%;
+    height: 45%;
+    bottom: 0;
+  }
 }
