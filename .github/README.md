@@ -2,7 +2,7 @@
 
 <h2 align=center>Criação de uma página para adquirir um café, desafio proposto no programa Discover da RocketSeat.</h2>
 
-<h3 align=center><strong> Você pode conferir o projeto <a href='https://tthayza.github.io/rocket-coffee/' target='_blank'>clicando aqui</a>! 💫</h3></strong>
+<h3 align=center><strong> Você pode conferir o projeto <a href='https://tthayza.github.io/rocket-coffee/' target="_blank">clicando aqui</a>! 💫</h3></strong>
 
 <br>
 
